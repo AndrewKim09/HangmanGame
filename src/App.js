@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import { HowToPlay } from "./components/HowToPlay";
+import { StartMenu } from "./components/StartMenu";
+import { Game } from "./components/Game";
+import { CategoryPicker } from "./components/CategoryPicker";
+
 
 function App() {
+  const [page, setPage] = useState('');
+  const [category, setCategory] = useState('');
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="background h-[100vh] w-[100vw] flex flex-col items-center justify-center">
+        {page === '' && <StartMenu setPage={setPage}/>}
+        {page ==='HowToPlay' && <HowToPlay setPage={setPage}/>}
+        {page ==='CategoryPicker' && <CategoryPicker setPage={setPage} setCategory={setCategory}/>}
+        {page ==='Game' && <Game setPage={setPage} category={category}/>}
+      </div>
     </div>
   );
 }

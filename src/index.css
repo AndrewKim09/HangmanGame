@@ -1,13 +1,165 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: MouseMemoirs-Regular;
+  src: url(./MouseMemoirs-Regular.ttf);
+}
+html, body{
+  font-family: MouseMemoirs-Regular;
+  height: 100vh;
+  width: 100vw;
+  max-width: 100%;
+  max-height: 100%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@media screen and (max-width: 425px){ /*mobile*/
+  .background{
+    background-image: url(../assets/images/background-mobile.svg);
+    background-size: cover;
+  }
+
+  .startMenuContainer{
+    background: linear-gradient( rgba(52, 74, 186) 0%, rgba(0, 20, 121, 0.83) 100%);
+    box-shadow: 0px -15px 0px 5px #2463FF, 0px 0px 0px 8px #140E66;
+  }
+
+  .HowToPlayButton{
+    background: #2463FF;
+    box-shadow: 0px -5px 0px 4px #3C74FF, 0px 0px 0px 6px #140E66;
+  }
+  
+}
+
+@media screen and ( max-width: 768px) and (min-width: 426px){ /*tablet*/
+  .background{
+    background-image: url(../assets/images/background-tablet.svg);
+    background-size: cover;
+  }
+
+  .startMenuContainer{
+    background: linear-gradient( rgba(52, 74, 186) 0%, rgba(0, 20, 121, 0.83) 100%);
+    box-shadow: 0px -15px 0px 5px #2463FF, 0px 0px 0px 8px #140E66;
+  }
+
+  .HowToPlayButton{
+    background: #2463FF;
+    box-shadow: 0px -5px 0px 4px #3C74FF, 0px 0px 0px 6px #140E66;
+  }
+  
+}
+
+@media screen and (min-width: 769px){ /*desktop*/
+  .background{
+    background-image: url(../assets/images/background-desktop.svg);
+    background-size: cover;
+  }
+
+  .startMenuContainer{
+    background: linear-gradient( rgba(52, 74, 186) 0%, rgba(0, 20, 121, 0.83) 100%);
+    box-shadow: 0px -15px 0px 5px #2463FF, 0px 0px 0px 8px #140E66;
+  }
+
+  .HowToPlayButton{
+    background: #2463FF;
+    box-shadow: 0px -5px 0px 4px #3C74FF, 0px 0px 0px 6px #140E66;
+  }
+
+
+}
+
+.startMenu{
+  background-image: url(../assets/images/logo.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+
+.playButton{
+  background-image: url(../assets/images/icon-play.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+}
+
+.backLogo{
+  background-image: url(../assets/images/icon-back.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+}
+
+.gradientText{
+  background: linear-gradient( #67B6FF 0%, white 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 3px #243041;
+
+}
+
+.quitButton{
+  background: linear-gradient( #FE71FE 0%, #7199FF 100%);
+  box-shadow: 0px -5px 0px 4px #C642FB, 0px 0px 0px 6px #140E66;
+  cursor: pointer;
+  border-radius: 30px;
+  color: white;
+}
+
+.categoryButton{
+  background: #2463FF;
+  box-shadow: 0px -5px 0px 4px #3C74FF, 0px 0px 0px 6px #140E66;
+  cursor: pointer;
+  border-radius: 30px;
+  color: white;
+}
+
+.categoryButtonText:hover{
+  background-color: rgba(255, 255, 255, 0.25)
+}
+
+.categoryButtonText{
+  font-weight: bold;
+  padding: 10px;
+  display: flex;
+  border-radius: 30px;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.healthLogo{
+  background-image: url(../assets/images/icon-heart.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100px;
+  height: 100px;
+}
+
+.menuLogo{
+  background-image: url(../assets/images/icon-menu.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100px;
+  height: 100px;
+}
+
+.letterButtonContainer{
+  background: #2463FF;
+  box-shadow: 0px -5px 0px 4px #3C74FF, 0px 0px 0px 6px #140E66;
+  color: white;
+}
+
+.pauseMenuText{
+  background-image: url(../assets/images/icon-menu.svg);
 }
